@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <img src="{{ student.image.url }}" alt="Profile Image" class="img-fluid rounded-circle">
+      <h4>Welcome, {{ student.fname }} {{ student.lname }}</h4>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item active">Dashboard</li>
+        <li class="list-group-item"><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+    </div>
+    <div class="col-md-10">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Student Information</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item">UID: {{ student.uid }}</li>
+            <li class="list-group-item">Email: {{ student.email }}</li>
+            <li class="list-group-item">Name: {{ student.fname }} {{ student.lname }}</li>
+            <li class="list-group-item">Section: {{ student.sec }}</li>
+            <li class="list-group-item">Mobile Number: {{ student.mobile_num }}</li>
+            <li class="list-group-item">Address: {{ student.address }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4">
+        <h4>Available Assessments</h4>
+        {% for assignment in assessment %}
+        <div class="card mt-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ assignment.name }}</h5>
+            <p>Teacher: {{ assignment.teacher.name }}</p>
+            <!-- <p>ID: {{ assignment.id }}</p> -->
+            {% if assignment.id in flag %}
+              <p>Your assessment submited!</p>
+            {% else %}
+              <a href="{% url 'start_assignment' assignment.id %}" class="btn btn-primary">Start Assessment</a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+
+      <div class="mt-4">
+        <h4>Submission Details</h4>
+        {% for submission in submissions %}
+        <div class="card mt-3">
+          <div class="card-body">
+            <p>Name of the Assessment: {{ submission.assessment.name }}</p>
+            <p>Marks: {{ submission.marks }}</p>
+            
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
+      </div>
+
+      <!-- <div class="mt-4">
+        <h4>Assessment Scores</h4>
+        {% for submission in student.submission_set.all %}
+        <div class="card mt-3">
+          <div class="card-body">
+            <p>Name of the Assessment: {{ submission.assessment.name }}</p>
+            <p>Marks: {{ submission.marks }}</p>
+          </div>
+        </div>
+        <hr>
+        {% endfor %}
+      </div> -->
+   
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home page{% endblock %}</title>
+    <link rel="icon" type="image/png" href="https://media.licdn.com/dms/image/C560BAQEjvDRq8qw-YA/company-logo_200_200/0/1628077987761?e=1697673600&v=beta&t=-w5Q-iBbDV8f9zkKOHARLSelv331VOnjFILHz9KLkkQ">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Set height of body and html to full screen */
+        html, body {
+            height: 100%;
+        }
+
+        /* Add padding to top of body to make space for navigation bar */
+        body {
+            padding-top: 56px;
+        }
+
+        /* Set background color of navigation bar */
+        .navbar {
+            background-color: #4CAF50;
+        }
+
+        /* Set text color of navigation links */
+        .navbar-nav a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- <a class="navbar-brand" href="{% url 'base' %}"> -->
+        <img src="https://media.licdn.com/dms/image/C560BAQEjvDRq8qw-YA/company-logo_200_200/0/1628077987761?e=1697673600&v=beta&t=-w5Q-iBbDV8f9zkKOHARLSelv331VOnjFILHz9KLkkQ" alt="vishnu logo" width="3%" height="3%" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'student_r' %}">Student Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'teacher_r' %}">Teacher Registration</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <div class="container">
+        {% block content %} 
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQHM0ZGoeRId9g/article-cover_image-shrink_720_1280/0/1681148145104?e=1694649600&v=beta&t=KEDPfkNBmqTQmwn5JvLpwUHhxcBsMZwGvLy7aIb5oos" alt="Banner Image 1" class="d-block w-100"  height="380px" >
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://media.licdn.com/dms/image/D4D22AQEizFQIdwF6FQ/feedshare-shrink_2048_1536/0/1684089648705?e=1692230400&v=beta&t=thbUiBK4GwDs6RVlLQVatTJfvRfhnSOQYGZvCacqYT8" alt="Banner Image 2" class="d-block w-100"  height="380px">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://media.licdn.com/dms/image/D4D22AQFvPESBiriKYg/feedshare-shrink_2048_1536/0/1684089659304?e=1692230400&v=beta&t=evmFc3QAHS-mdToZSG0GScCMnJCjVEk3uUQmZUKcOzU" alt="Banner Image 3" class="d-block w-100" height="380px">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+               
+              
+            <!-- Introduction paragraphs -->
+            <div class="row mt-3">
+              <div class="col-lg-8 offset-lg-2">
+                <h1>Welcome to our One Oath Educational</h1>
+                <p class="lead">One Oath have taken an oath of making our nation fully literate by 2040 through their innovative approach of Al-based smart class, quality teachers, efficient individual mentors, and lastly detection of the actual problems faced by students with the help of their new concept. They are working and successfully implementing the methods of Vedic education as well as AI in education by creating an extremely amicable and abstract approach to learning.</p>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5">
+              <div class="col-lg-8 offset-lg-2">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                  <li>We provide personalized attention to each student.</li>
+                  <li>Bridging the digital divide</li>
+                  <li>We use modern teaching methods and technology.</li>
+                  <li>Empowerment of Marginalized groups</li>
+                  <li>Enhanced Well-being and resilience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <!-- Vision and Mission section -->
+            <div class="row mt-5">
+              <div class="col-lg-6">
+                <h2>Vision</h2>
+                <p>To achieve academic excellence through innovative learning practices
+
+                </p>
+                <p>To expand the frontiers of knowledge through quality education.</p>
+                <p>To provide value added Research and development</p>
+                
+              </div>
+              <div class="col-lg-6">
+                <h2>Mission</h2>
+                <p>Witness the profound impact of ONE OATH's innovative education solutions. Discover how we have empowered lives, bridged learning gaps, and unleashed the full potential of students across diverse communities. Together, we're transforming education for a brighter future.</p>
+              </div>
+            </div>
+          </div>
+          
+        
+          <footer style="background-color: #4CAF50; color: rgb(226, 222, 222);">
+            <div class="container py-3">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Contact Us</h5>
+                  <p>330, KC Dutta road Near Ovoy Ashram, Chakdaha, West Bengal, 741222 ,Manjunatha layout, Near pragati High school, Munnekollal, Marathahalli, Bengaluru, Karnataka, 560037</p>
+                </div>
+                <div class="col-md-6">
+                  <h5>About the Developer</h5>
+                  <p>Jogi Naga Malleswara Rro</p>
+                  <p>Email: 20pa5a0506@vishnu.edu.in</p>
+                  <p>Phone:+91 6304205809</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>&copy; 2023 Malleswararao . All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                  <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Terms of Service</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+          
+           <!-- Link to external Bootstrap JS -->
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+        
+           <!-- Custom JS -->
+           <script>
+           $('.carousel').carousel({
+               interval: 2000,
+               pause: false
+           })
+           </script>
+        
+        
+          
+          <!-- Link to external Bootstrap JS (optional) -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+        
+        {% endblock %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"></script>
+
+  
+  <!-- Link to external Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
+</html>
